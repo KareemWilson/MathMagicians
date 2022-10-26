@@ -10,10 +10,10 @@ export default class Calculator extends React.Component {
     return (
       <div className="container">
         <table className="calculator">
-          <tr className="result-container">
-            <td className="result">{this.result}</td>
-          </tr>
           <tbody className="btns-group">
+            <tr className="result-container">
+              <th colSpan={4} className="result">{this.result}</th>
+            </tr>
             <tr className="btns-row">
               <td>AC</td>
               <td>+/-</td>
