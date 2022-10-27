@@ -16,17 +16,20 @@ export default class Calculator extends React.Component {
     const value = e.target.innerHTML;
     const obj = calculate(this.state, value);
     this.setState(obj);
+    console.log(obj);
   }
 
   render() {
-    const { total } = this.state;
+    const { total, operation, next } = this.state;
     return (
       <div className="container">
         <table className="calculator">
           <tbody className="btns-group">
             <tr className="result-container">
               <th colSpan={4} className="result">
-                { total || 0 }
+                { total }
+                { operation }
+                { next }
               </th>
             </tr>
             <tr className="btns-row">
