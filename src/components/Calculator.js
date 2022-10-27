@@ -1,47 +1,63 @@
 import React from 'react';
+import calculate from '../logic/calculate';
 
 export default class Calculator extends React.Component {
-  constructor() {
-    super();
-    this.result = 0;
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: '0',
+      next: this.next,
+      operation: this.operation,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    const value = e.target.innerHTML;
+    const obj = calculate(this.state, value);
+    this.setState(obj);
+    console.log(obj);
   }
 
   render() {
+    const { total } = this.state;
     return (
       <div className="container">
         <table className="calculator">
           <tbody className="btns-group">
             <tr className="result-container">
-              <th colSpan={4} className="result">{this.result}</th>
+              <th colSpan={4} className="result">
+                { total || 0 }
+              </th>
             </tr>
             <tr className="btns-row">
-              <td>AC</td>
-              <td>+/-</td>
-              <td>%</td>
-              <td className="orange">÷</td>
+              <td onClick={this.handleClick} aria-hidden="true">AC</td>
+              <td onClick={this.handleClick} aria-hidden="true">+/-</td>
+              <td onClick={this.handleClick} aria-hidden="true">%</td>
+              <td onClick={this.handleClick} className="orange" aria-hidden="true">÷</td>
             </tr>
             <tr className="btns-row">
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-              <td className="orange">x</td>
+              <td onClick={this.handleClick} aria-hidden="true">7</td>
+              <td onClick={this.handleClick} aria-hidden="true">8</td>
+              <td onClick={this.handleClick} aria-hidden="true">9</td>
+              <td onClick={this.handleClick} className="orange" aria-hidden="true">x</td>
             </tr>
             <tr className="btns-row">
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td className="orange">-</td>
+              <td onClick={this.handleClick} aria-hidden="true">4</td>
+              <td onClick={this.handleClick} aria-hidden="true">5</td>
+              <td onClick={this.handleClick} aria-hidden="true">6</td>
+              <td onClick={this.handleClick} className="orange" aria-hidden="true">-</td>
             </tr>
             <tr className="btns-row">
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td className="orange">+</td>
+              <td onClick={this.handleClick} aria-hidden="true">1</td>
+              <td onClick={this.handleClick} aria-hidden="true">2</td>
+              <td onClick={this.handleClick} aria-hidden="true">3</td>
+              <td onClick={this.handleClick} className="orange" aria-hidden="true">+</td>
             </tr>
             <tr className="btns-row">
-              <td colSpan={2}>0</td>
-              <td>.</td>
-              <td className="orange">=</td>
+              <td onClick={this.handleClick} colSpan={2} aria-hidden="true">0</td>
+              <td onClick={this.handleClick} aria-hidden="true">.</td>
+              <td onClick={this.handleClick} className="orange" aria-hidden="true">=</td>
             </tr>
           </tbody>
         </table>
