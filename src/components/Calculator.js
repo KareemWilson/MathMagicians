@@ -16,7 +16,6 @@ export default class Calculator extends React.Component {
     const value = e.target.innerHTML;
     const obj = calculate(this.state, value);
     this.setState(obj);
-    console.log(obj);
   }
 
   render() {
