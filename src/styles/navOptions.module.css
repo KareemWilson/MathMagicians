@@ -1,0 +1,8 @@
+.navList {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 36px;
+    font-size: 20px;
+    color: white;
+}
