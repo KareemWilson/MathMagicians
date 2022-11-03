@@ -2,7 +2,7 @@ import React from 'react';
 
 function Home() {
   return (
-    <div>
+    <div style={{ padding: '150px' }}>
       <h3>Welcome to our Page</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus

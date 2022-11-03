@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/navOptions.module.css';
 
 const navOptions = [
@@ -23,7 +24,9 @@ function NavOptions() {
   return (
     <ul className={styles.navList}>
       {navOptions.map((item) => (
-        <li key={item.id}>{item.name}</li>
+        <li key={item.id}>
+          <Link className={styles.navItem} to={item.path}>{item.name}</Link>
+        </li>
       ))}
     </ul>
   );

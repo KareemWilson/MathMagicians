@@ -6,3 +6,8 @@
     font-size: 20px;
     color: white;
 }
+
+.navItem {
+    color: white;
+    text-decoration: none;
+}
