@@ -1,13 +1,13 @@
 .navList {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 36px;
-    font-size: 20px;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 36px;
+  font-size: 20px;
+  color: white;
 }
 
 .navItem {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
