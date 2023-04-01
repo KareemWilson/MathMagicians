@@ -17,10 +17,10 @@ class App extends React.Component {
       <>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Main />} />
         </Routes>
         <Routes>
-          <Route path="/calculator" element={<Main />} />
+          <Route path="/calculator" element={<Home />} />
         </Routes>
         <Routes>
           <Route path="/quote" element={<Quote />} />
